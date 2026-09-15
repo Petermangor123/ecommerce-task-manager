@@ -1,0 +1,2 @@
+# Exclude real database credentials - never commit this file
+db.php
