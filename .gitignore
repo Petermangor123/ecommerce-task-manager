@@ -1,0 +1,14 @@
+# Lab 1 — real DB credentials
+tasks-app/db.php
+
+# Lab 2 — real DB credentials
+Lab_Register_&_Login_1/core/db_cred.php
+Lab_Register_&_Login_1/db_cred.php
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories
+.vscode/
+.idea/
