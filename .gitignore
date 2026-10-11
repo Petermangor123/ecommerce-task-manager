@@ -5,6 +5,16 @@ tasks-app/db.php
 Lab_Register_&_Login_1/core/db_cred.php
 Lab_Register_&_Login_1/db_cred.php
 
+# Lab 4 — real DB credentials (committed as db_cred.example.php)
+Lab_4_Product/core/db_cred.php
+
+# Lab 4 — uploaded product images (user-generated; not source code)
+Lab_4_Product/images/products/*
+!Lab_4_Product/images/products/.gitkeep
+
+# Lab 4 — Kiro agent workflow reports (IDE-internal, not application code)
+Lab_4_Product/.agents/
+
 # OS files
 .DS_Store
 Thumbs.db
