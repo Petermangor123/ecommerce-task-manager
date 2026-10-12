@@ -47,13 +47,6 @@ define('DB_NAME', 'shoppn');
 ?>
 ```
 
-## Creating an Admin Account
+## Administrative Access
 
-1. Register a new account via `/views/register.php`.
-2. Run the following SQL in phpMyAdmin to promote the account to admin:
-
-```sql
-UPDATE customer SET user_role = 1 WHERE customer_email = 'you@example.com';
-```
-
-3. Log out and back in — the Admin link will appear in the header.
+Administrative features require an account with the administrator role. Role assignment must be performed securely by the database administrator. Do not use ad-hoc SQL from this README to promote users.
