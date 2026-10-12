@@ -1,0 +1,27 @@
+# ============================================================
+# Shoppn — .gitignore
+# ============================================================
+
+# ── Credentials (NEVER commit these) ─────────────────────────
+core/db_cred.php
+views/db_cred.php
+
+# ── Agent / AI task artifacts ─────────────────────────────────
+.agents/
+# Also covers the misplaced copy inside css/ created by a prior tool run
+css/.agents/
+
+# ── Log files ─────────────────────────────────────────────────
+*.log
+logs/
+
+# ── OS and editor noise ───────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# ── Orphan files that are not part of the deployed application ─
+# style.css at the project root is a stray copy; the real one is css/style.css
+/style.css

@@ -5,6 +5,14 @@ tasks-app/db.php
 Lab_Register_&_Login_1/core/db_cred.php
 Lab_Register_&_Login_1/db_cred.php
 
+# Lab 3 — real DB credentials (committed as db_cred.example.php)
+Lab_3_Brand_and_Categories/core/db_cred.php
+Lab_3_Brand_and_Categories/views/db_cred.php
+
+# Lab 3 — Kiro agent workflow reports (IDE-internal, not application code)
+Lab_3_Brand_and_Categories/.agents/
+Lab_3_Brand_and_Categories/css/.agents/
+
 # Lab 4 — real DB credentials (committed as db_cred.example.php)
 Lab_4_Product/core/db_cred.php
 
