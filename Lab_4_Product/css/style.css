@@ -1,8 +1,10 @@
 /* ============================================================
    Shoppn — style.css
-   Simple, clean stylesheet for Tasks 1–4
+   Clean, responsive stylesheet for Tasks 1–4
    ============================================================ */
+
 /* ── Reset & base ─────────────────────────────────────────── */
+
 *,
 *::before,
 *::after {
@@ -31,7 +33,7 @@ a:hover {
 }
 
 /* ── Page wrapper ─────────────────────────────────────────── */
-/* Centers content and limits max width */
+
 header,
 .page-body,
 footer>* {
@@ -44,14 +46,17 @@ footer>* {
 }
 
 /* ── Header ───────────────────────────────────────────────── */
+
 header {
     background-color: #1e3a5f;
     color: #fff;
     padding: 14px 20px;
     display: flex;
     align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: nowrap;
+    width: 100%;
     max-width: 100%;
 }
 
@@ -59,7 +64,8 @@ header h1 {
     font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: 1px;
-    flex-shrink: 0;
+    flex: 0 0 auto;
+    white-space: nowrap;
 }
 
 header h1 a {
@@ -73,49 +79,58 @@ header h1 a:hover {
 }
 
 /* ── Navigation ───────────────────────────────────────────── */
-nav {
+
+header nav {
     display: flex;
     align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-    flex: 1;
+    justify-content: space-between;
+    gap: 4px;
+    flex-wrap: nowrap;
+    flex: 1 1 auto;
+    min-width: 0;
 }
 
-nav a {
+header nav a {
     color: #cbd5e1;
-    font-size: 0.9rem;
-    padding: 5px 10px;
+    font-size: 0.85rem;
+    padding: 6px 5px;
     border-radius: 4px;
+    white-space: nowrap;
+    flex-shrink: 0;
     transition: background 0.2s, color 0.2s;
 }
 
-nav a:hover {
+header nav a:hover {
     background-color: #2563eb;
     color: #fff;
     text-decoration: none;
 }
 
-nav span {
+header nav span {
     color: #93c5fd;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 /* ── Header search form ───────────────────────────────────── */
+
 header form {
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-left: auto;
+    margin: 0;
+    flex: 0 0 auto;
 }
 
 header form input[type="text"] {
-    padding: 6px 10px;
+    padding: 8px 10px;
     border: 1px solid #4a6fa5;
     border-radius: 4px;
     background: #fff;
     font-size: 0.85rem;
-    width: 180px;
+    width: 150px;
     outline: none;
 }
 
@@ -124,13 +139,14 @@ header form input[type="text"]:focus {
 }
 
 header form button {
-    padding: 6px 14px;
+    padding: 8px 14px;
     background-color: #2563eb;
     color: #fff;
     border: none;
     border-radius: 4px;
     font-size: 0.85rem;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 header form button:hover {
@@ -138,6 +154,7 @@ header form button:hover {
 }
 
 /* ── Layout: sidebar + main ───────────────────────────────── */
+
 .page-body {
     display: flex;
     gap: 24px;
@@ -147,10 +164,9 @@ header form button:hover {
     align-items: flex-start;
 }
 
-/* When there is no sidebar (login, register, my_account),
-   main fills the full width naturally */
 main {
     flex: 1;
+    min-width: 0;
     background: #fff;
     padding: 28px 32px;
     border-radius: 8px;
@@ -169,6 +185,7 @@ main p {
 }
 
 /* ── Sidebar ──────────────────────────────────────────────── */
+
 aside {
     width: 220px;
     flex-shrink: 0;
@@ -212,6 +229,7 @@ aside ul li a:hover {
 }
 
 /* ── Footer ───────────────────────────────────────────────── */
+
 footer {
     background-color: #1e3a5f;
     color: #94a3b8;
@@ -225,7 +243,8 @@ footer p {
     margin: 0;
 }
 
-/* ── Forms (register & login) ─────────────────────────────── */
+/* ── Forms: registration and login ────────────────────────── */
+
 #register-form,
 #login-form {
     max-width: 480px;
@@ -274,6 +293,7 @@ input[type="file"] {
 }
 
 /* ── Buttons ──────────────────────────────────────────────── */
+
 button[type="submit"] {
     background-color: #2563eb;
     color: #fff;
@@ -291,7 +311,8 @@ button[type="submit"]:hover {
     background-color: #1d4ed8;
 }
 
-/* ── Inline validation error spans ───────────────────────── */
+/* ── Inline validation errors ─────────────────────────────── */
+
 #name-error,
 #email-error,
 #password-error,
@@ -304,7 +325,7 @@ button[type="submit"]:hover {
 }
 
 /* ── Session error messages ───────────────────────────────── */
-/* login.php uses <p style="color:red;">, register.php uses <p class="error-msg"> */
+
 .error-msg,
 main p[style*="color:red"],
 main p[style*="color: red"] {
@@ -317,7 +338,8 @@ main p[style*="color: red"] {
     font-size: 0.9rem;
 }
 
-/* ── Utility ──────────────────────────────────────────────── */
+/* ── Utility classes ──────────────────────────────────────── */
+
 .text-center {
     text-align: center;
 }
@@ -330,7 +352,8 @@ main p[style*="color: red"] {
     margin-top: 16px;
 }
 
-/* -- Product grid & cards ----------------------------------------------- */
+/* ── Product grid and cards ───────────────────────────────── */
+
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -360,7 +383,6 @@ main p[style*="color: red"] {
     display: block;
     background: #f8fafc;
     padding: 8px;
-    box-sizing: border-box;
 }
 
 .product-card__no-img {
@@ -404,7 +426,8 @@ main p[style*="color: red"] {
     margin-top: auto;
 }
 
-/* -- Generic button classes --------------------------------------------- */
+/* ── Generic button classes ───────────────────────────────── */
+
 .btn {
     display: inline-block;
     padding: 6px 14px;
@@ -436,4 +459,114 @@ main p[style*="color: red"] {
     background-color: #cbd5e1;
     text-decoration: none;
     color: #1e3a5f;
+}
+
+/* ── Responsive layout ────────────────────────────────────── */
+
+@media (max-width: 1250px) {
+    header {
+        gap: 10px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+
+    header nav {
+        gap: 2px;
+    }
+
+    header nav a {
+        padding-left: 4px;
+        padding-right: 4px;
+        font-size: 0.8rem;
+    }
+
+    header nav span {
+        font-size: 0.8rem;
+    }
+
+    header form input[type="text"] {
+        width: 125px;
+    }
+
+    header form button {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 950px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    header nav {
+        flex: 1 1 100%;
+        order: 3;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    header form {
+        margin-left: auto;
+    }
+
+    .page-body {
+        gap: 16px;
+    }
+
+    main {
+        padding: 24px;
+    }
+}
+
+@media (max-width: 650px) {
+    header {
+        padding: 12px 16px;
+    }
+
+    header nav {
+        gap: 4px;
+    }
+
+    header nav a {
+        font-size: 0.85rem;
+    }
+
+    header form {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    header form input[type="text"] {
+        flex: 1;
+        width: auto;
+        min-width: 0;
+    }
+
+    .page-body {
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    aside {
+        width: 100%;
+    }
+
+    main {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 12px;
+    }
+
+    .product-card__img {
+        height: 150px;
+    }
 }

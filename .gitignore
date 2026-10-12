@@ -11,6 +11,9 @@ Lab_4_Product/core/db_cred.php
 # Lab 4 — uploaded product images (user-generated; not source code)
 Lab_4_Product/images/products/*
 !Lab_4_Product/images/products/.gitkeep
+!Lab_4_Product/images/products/prod_6acd033382c675.64546327.webp
+!Lab_4_Product/images/products/prod_6acd03409768b1.92210750.jpg
+!Lab_4_Product/images/products/prod_6acd03501c3996.53703836.jpg
 
 # Lab 4 — Kiro agent workflow reports (IDE-internal, not application code)
 Lab_4_Product/.agents/
