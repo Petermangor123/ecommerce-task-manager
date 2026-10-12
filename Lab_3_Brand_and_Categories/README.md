@@ -20,13 +20,6 @@ define('DB_NAME', 'shoppn');
 
 `core/db_cred.php` is **not included** in this repository. Do not commit real passwords or database credentials.
 
-## Creating an Admin Account
+## Administrative Access
 
-1. Register via `/views/register.php`.
-2. Promote the account in phpMyAdmin:
-
-```sql
-UPDATE customer SET user_role = 1 WHERE customer_email = 'you@example.com';
-```
-
-3. Log out and back in to use Brand and Category admin pages.
+Administrative features require an account with the administrator role. Role assignment must be performed securely by the database administrator. Do not use ad-hoc SQL from this README to promote users.
