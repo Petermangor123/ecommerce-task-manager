@@ -6,10 +6,19 @@ PHP/MySQL e-commerce lab covering customer auth plus admin brand and category ma
 
 1. Copy this folder into your XAMPP `htdocs` tree (or keep it in this repository clone).
 2. Import `database/shoppn.sql` into MySQL via phpMyAdmin.
-3. Copy `core/db_cred.example.php` to `core/db_cred.php` and fill in your local credentials.
+3. Create `core/db_cred.php` locally with your own settings. This file is gitignored and must not be committed. Use this structure (replace the placeholder values):
+
+```php
+<?php
+define('DB_HOST', 'localhost');
+define('DB_USER', 'your_db_username');
+define('DB_PASS', 'your_db_password');
+define('DB_NAME', 'shoppn');
+```
+
 4. Open `http://localhost/e-commerce-labs/Lab_3_Brand_and_Categories/` in your browser.
 
-`core/db_cred.php` is **not included** in this repository.
+`core/db_cred.php` is **not included** in this repository. Do not commit real passwords or database credentials.
 
 ## Creating an Admin Account
 
