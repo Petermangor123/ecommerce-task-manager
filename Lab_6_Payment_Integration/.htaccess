@@ -1,0 +1,32 @@
+# apache rules. upload this file too (filezilla hides it by default).
+
+Options -Indexes
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "\.(sql|log|md|ini|env)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+    <FilesMatch "\.(sql|log|md|ini|env)$">
+        Deny from all
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # https on the live site. localhost stays on http.
+    RewriteCond %{HTTP_HOST} !^localhost(?::\d+)?$ [NC]
+    RewriteCond %{HTTP_HOST} !^127\.0\.0\.1(?::\d+)?$ [NC]
+    RewriteCond %{HTTP_HOST} !^\[::1\](?::\d+)?$ [NC]
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https [NC]
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # don't serve config, sql, or the deploy notes
+    RewriteRule ^core/private/ - [F,L]
+    RewriteRule ^core/(db_cred|paystack_config|config_loader)\.php$ - [F,L]
+    RewriteRule ^database/ - [F,L]
+    RewriteRule ^deploy/ - [F,L]
+</IfModule>

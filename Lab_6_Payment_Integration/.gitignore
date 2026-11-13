@@ -1,0 +1,16 @@
+# Credentials. Examples under deploy/templates/ are safe to keep.
+core/private/db_cred.php
+core/private/paystack_config.php
+.env
+.env.*
+
+# If you place config beside the document root instead.
+/shoppn-private/
+
+# Local / editor noise
+*.log
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
